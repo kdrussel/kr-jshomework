@@ -1,0 +1,39 @@
+<html>
+
+<head>
+
+	<title>Rock, Paper, Scissors</title>
+
+	<script type="text/javascript">
+
+		var weapons = ['rock' , 'paper', 'scissors'];
+
+		var UserWeaponOfChoice = weapons[parseInt(Math.random()*weapons.length)*3];
+		var ComputerWeaponOfChoice = weapons[parseInt(Math.random()*weapons.length) *3];
+
+		if( UserWeaponOfChoice == ComputerWeaponOfChoice){
+			console.log('Tie game')
+		}
+		else if( UserWeaponOfChoice == 'rock' && ComputerWeaponOfChoice == 'paper' || UserWeaponOfChoice == 'scissors' && ComputerWeaponOfChoice == 'rock' || UserWeaponOfChoice == 'paper' && ComputerWeaponOfChoice == 'scissors'){
+			console.log('The computer wins')
+		}
+		else{
+			console.log('User wins')
+		}
+
+
+	</script>
+
+</head>
+
+
+
+<body>
+
+
+
+
+
+</body>
+
+</html>
