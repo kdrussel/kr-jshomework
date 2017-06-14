@@ -6,20 +6,37 @@
 
 	<script type="text/javascript">
 
+		var userwins = 0;
+		var computerwins = 0;
+
 		var weapons = ['rock' , 'paper', 'scissors'];
 
-		var UserWeaponOfChoice = weapons[parseInt(Math.random()*weapons.length)*3];
-		var ComputerWeaponOfChoice = weapons[parseInt(Math.random()*weapons.length) *3];
+		while(userwins < 3 && computerwins < 3) {
 
-		if( UserWeaponOfChoice == ComputerWeaponOfChoice){
-			console.log('Tie game')
+			var UserWeaponOfChoice = weapons[parseInt(Math.random()*weapons.length)*3];
+			var ComputerWeaponOfChoice = weapons[parseInt(Math.random()*weapons.length) *3];
+
+			if( UserWeaponOfChoice == ComputerWeaponOfChoice){
+				console.log('Tie game');
+			}
+			else if( UserWeaponOfChoice == 'rock' && ComputerWeaponOfChoice == 'paper' || UserWeaponOfChoice == 'scissors' && ComputerWeaponOfChoice == 'rock' || UserWeaponOfChoice == 'paper' && ComputerWeaponOfChoice == 'scissors'){
+				console.log('The computer wins'); computerwins++;
+			}
+			else{
+				console.log('User wins'); userwins++;
+			}
 		}
-		else if( UserWeaponOfChoice == 'rock' && ComputerWeaponOfChoice == 'paper' || UserWeaponOfChoice == 'scissors' && ComputerWeaponOfChoice == 'rock' || UserWeaponOfChoice == 'paper' && ComputerWeaponOfChoice == 'scissors'){
-			console.log('The computer wins')
+
+		if(userwins > computerwins){
+			console.log(" Game over, User has 3 wins");
+		}
+		else if(computerwins > userwins){
+			console.log(" Game over, Computer has 3 wins");
 		}
 		else{
-			console.log('User wins')
+			console.log("keep going");
 		}
+
 
 
 	</script>
